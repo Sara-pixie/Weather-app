@@ -51,6 +51,7 @@ button {
 .date {
   font-size: 20px;
   color: rgb(48, 48, 247);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
 h3 {
   font-size: 25px;

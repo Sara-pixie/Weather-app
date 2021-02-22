@@ -46,8 +46,48 @@ function displayIcon(icon){
     let iconImage = `http://openweathermap.org/img/wn/${icon}@2x.png`;
     iconElement.innerHTML = `<img src="${iconImage}" alt="weather icon">`;
 }
+function nightTheme(){
+    let background = document.querySelector("#background");
+    background.setAttribute("style", "background-image:url(images/background-nightsky.jpg)");
+    let app = document.querySelector("#app");
+    app.setAttribute("style", "border:1px solid rgb(247, 202, 1)");
+    let city = document.querySelector("#current-city");
+    city.setAttribute("style", "color:rgb(247, 161, 1)");
+    let date = document.querySelector("#current-date");
+    date.setAttribute("style", "color:rgb(35, 235, 235);");
+    let hr = document.querySelector("#hr");
+    hr.setAttribute("style", "color:white");
+    let cityWeather = document.querySelector("#city-weather");
+    cityWeather.setAttribute("style", "color:rgb(255, 248, 149)");
+    let forecast = document.querySelector("#forecast");
+    forecast.setAttribute("style", "color:rgb(255, 244, 96)");
+    let footer = document.querySelector("#footer");
+    footer.setAttribute("style", "color:rgb(255, 248, 149)");
+    let saraLink = document.querySelector("#sara-link");
+    saraLink.setAttribute("style", "color:rgb(255, 241, 52)");
+    let weatherIcon = document.querySelector("#weather-icon");
+    weatherIcon.setAttribute("style", "background:rgba(0, 0, 0, 0.4)");
+    let leftCol = document.querySelector("#left-col");
+    leftCol.setAttribute("style", "box-shadow:1px 0 0 rgba(255, 255, 255, 0.4)");
+    let day1 = document.querySelector("#day-1");
+    let day2 = document.querySelector("#day-2");
+    let day3 = document.querySelector("#day-3");
+    let day4 = document.querySelector("#day-4");
+    let day5 = document.querySelector("#day-5");
+    let day6 = document.querySelector("#day-6");
+    day1.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
+    day2.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
+    day3.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
+    day4.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
+    day5.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
+    day6.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
+}
+function changeBackground(sunrise, sunset){
+    if (now < sunrise || now > sunset){
+        nightTheme();    
+    }  
+}
 function showCityWeather(result){
-    console.log(result.data);
     let city = result.data.name;
     displayCityName(city);
     let temperature = result.data.main.temp;
@@ -62,6 +102,9 @@ function showCityWeather(result){
     displayWindSpeed(wind);
     let icon = result.data.weather[0].icon;
     displayIcon(icon);
+    let sunRise = new Date((result.data.sys.sunrise)*1000);
+    let sunSet = new Date((result.data.sys.sunset)*1000);
+    changeBackground (sunRise, sunSet);
 }
 function search (city){
     let apiKey = "6193c366e72e624c45a1116d350e8278";
