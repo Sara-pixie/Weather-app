@@ -1,16 +1,26 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
 .background {
   background-image: url("../images/background-weather.jpg");
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
+  position: sticky;
+  top: 0;
+}
+.container {
+  padding-top: 80px;
+  padding-bottom: 50px;
 }
 .app {
   border: 1px solid rgb(0, 0, 51);
   border-radius: 4px;
   background: transparent;
-  margin: 80px auto 0px;
+  margin: 0 auto;
   padding: 15px 25px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
   max-width: 700px;
