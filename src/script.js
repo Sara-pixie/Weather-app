@@ -40,11 +40,11 @@ function displayWindSpeed(wind){
     let windElement = document.querySelector("#wind-speed");
     windElement.innerHTML = Math.round(wind);
 }
-//Icon
-//function displayIcon(icon){
-    //let iconElement = document.querySelector("#weather-icon");
-    //iconElement.innerHTML = icon;
-//}
+function displayIcon(icon){
+    let iconElement = document.querySelector("#weather-icon");
+    let iconImage = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    iconElement.innerHTML = `<img src="${iconImage}" alt="weather icon">`;
+}
 function showCityWeather(result){
     console.log(result.data);
     let city = result.data.name;
@@ -59,9 +59,8 @@ function showCityWeather(result){
     displayHumidity(humidity);
     let wind = result.data.wind.speed;
     displayWindSpeed(wind);
-    //Icon
-    //let icon = result.data.weather[0].icon;
-    //displayIcon(icon);
+    let icon = result.data.weather[0].icon;
+    displayIcon(icon);
 }
 function search (city){
     let apiKey = "6193c366e72e624c45a1116d350e8278";
