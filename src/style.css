@@ -96,21 +96,6 @@ h3 {
   border: 1px solid rgba(5, 5, 65, 0.5);
   background: rgba(255, 255, 255, 0.5);
 }
-.fa-sun {
-  color: rgb(255, 123, 0);
-}
-.fa-cloud {
-  color: gray;
-}
-.fa-cloud-showers-heavy {
-  color: indigo;
-}
-.fa-cloud-sun {
-  color: rgb(216, 38, 91);
-}
-.fa-cloud-sun-rain {
-  color: rgb(119, 39, 211);
-}
 .image {
   text-align: center;
 }
