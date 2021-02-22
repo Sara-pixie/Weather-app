@@ -133,10 +133,11 @@ h3 {
   margin: 0 auto;
 }
 .sara-git-link {
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.9);
   text-decoration: none;
 }
 .sara-git-link:hover {
   text-decoration: underline;
+  color: rgba(0, 0, 0, 0.9);
   cursor: pointer;
 }
