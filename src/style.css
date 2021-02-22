@@ -1,0 +1,128 @@
+body,
+html {
+  height: 100%;
+}
+.background {
+  background-image: url("../images/background-weather.jpg");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.app {
+  border: 1px solid rgb(0, 0, 51);
+  border-radius: 4px;
+  background: transparent;
+  margin: 80px auto;
+  padding: 15px 25px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
+  max-width: 700px;
+}
+.search {
+  margin: 0 auto;
+  width: 80%;
+}
+#search-input {
+  width: 60%;
+  padding: 5px 20px;
+  background: rgba(255, 255, 255, 0.445);
+  border: 1px solid rgba(255, 255, 255, 0.603);
+  border-radius: 4px;
+}
+button {
+  margin-left: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
+}
+#location-btn {
+  margin-top: 10px;
+  margin-right: 50px;
+  float: right;
+}
+.current-city {
+  margin: 5px auto;
+  font-family: "Courgette", cursive;
+}
+.city {
+  color: rgb(102, 25, 175);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+.date {
+  font-size: 20px;
+  color: rgb(48, 48, 247);
+}
+h3 {
+  font-size: 25px;
+}
+.city-weather .left {
+  box-shadow: 1px 0 0 rgba(0, 0, 51, 0.25);
+}
+.city-weather .temperature {
+  font-size: 40px;
+  padding-top: 5px;
+  margin-right: 5px;
+}
+.city-weather .unit {
+  position: relative;
+  top: -20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.selected {
+  font-weight: bolder;
+  font-size: larger;
+}
+#celsius:hover,
+#fahrenheit:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.city-weather .right {
+  padding-left: 40px;
+}
+.forecast {
+  border: 1px solid rgba(5, 5, 65, 0.25);
+  border-radius: 4px;
+  margin-top: 20px;
+  padding: 5px 20px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.day {
+  text-align: center;
+  border: 1px solid rgba(5, 5, 65, 0.25);
+  border-radius: 4px;
+  margin: 5px;
+  width: 90px;
+  padding-top: 5px;
+  box-shadow: 3px 3px 3px rgba(6, 6, 31, 0.25);
+}
+.day:hover {
+  border: 1px solid rgba(5, 5, 65, 0.5);
+  background: rgba(255, 255, 255, 0.5);
+}
+.fa-sun {
+  color: rgb(255, 123, 0);
+}
+.fa-cloud {
+  color: gray;
+}
+.fa-cloud-showers-heavy {
+  color: indigo;
+}
+.fa-cloud-sun {
+  color: rgb(216, 38, 91);
+}
+.fa-cloud-sun-rain {
+  color: rgb(119, 39, 211);
+}
+.image {
+  text-align: center;
+}
+.day p {
+  text-align: center;
+}
+.day .image {
+  font-size: 20px;
+}
+.city-weather .image {
+  font-size: 50px;
+}
