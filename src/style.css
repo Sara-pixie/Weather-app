@@ -126,3 +126,16 @@ h3 {
 .city-weather .image {
   font-size: 50px;
 }
+.footer {
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+.sara-git-link {
+  color: rgba(0, 0, 0, 0.75);
+  text-decoration: none;
+}
+.sara-git-link:hover {
+  text-decoration: underline;
+}
