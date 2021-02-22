@@ -38,7 +38,8 @@ function displayHumidity(humidity){
 }
 function displayWindSpeed(wind){
     let windElement = document.querySelector("#wind-speed");
-    windElement.innerHTML = Math.round(wind);
+    windSpeedKMH = Math.round(wind);
+    windElement.innerHTML = windSpeedKMH;
 }
 function displayIcon(icon){
     let iconElement = document.querySelector("#weather-icon");
@@ -97,9 +98,24 @@ myLocationBtn.addEventListener("click", searchMyLocation);
 //Default City
 search("Ljubljana");
 
-//Celsius and fahrenheit and km/h and mph
-// (C*1.8)+32=F
+// km/h and mph
 // "km/h" / 1.609344 = mph
+let windSpeedKMH = null;
+function convertToMPH(){
+    let speedElement = document.querySelector("#wind-speed");
+    let speedUnit = document.querySelector("#speed-unit");
+    speedUnit.innerHTML = "mph";
+    speedElement.innerHTML = Math.round(windSpeedKMH/1.609344);
+}
+function convertToKMH(){
+    let speedElement = document.querySelector("#wind-speed");
+    let speedUnit = document.querySelector("#speed-unit");
+    speedUnit.innerHTML = "km/h";
+    speedElement.innerHTML = windSpeedKMH;
+}
+
+//Celsius and fahrenheit
+// (C*1.8)+32=F
 function convertToF(event){
     let tempElement = document.querySelector("#now-temp");
     let tempFLink = document.querySelector("#fahrenheit");
@@ -108,16 +124,9 @@ function convertToF(event){
     tempCLink.classList.remove("selected");
     let tempC = tempElement.innerHTML;
     tempElement.innerHTML = Math.round((tempC*1.8)+32);
+    convertToMPH();
     tempCLink.addEventListener("click", convertToC);
     tempFLink.removeEventListener("click", convertToF);
-    //wind Speed -> not working (it gets smaller 
-    //and smaller with each conversion)
-    //let speedElement = document.querySelector("#wind-speed");
-    //let speedUnit = document.querySelector("#speed-unit");
-    //let speedKMH = speedElement.innerHTML;
-    //let speedMPH = Math.round(speedKMH/1.609344);
-    //speedElement.innerHTML = speedMPH;
-    //speedUnit.innerHTML = "mph";
 }
 function convertToC(event){
     let tempElement = document.querySelector("#now-temp");
@@ -127,15 +136,9 @@ function convertToC(event){
     tempFLink.classList.remove("selected");
     let tempF = tempElement.innerHTML;
     tempElement.innerHTML = Math.round((tempF-32)/1.8);
+    convertToKMH();
     tempFLink.addEventListener("click", convertToF);
     tempCLink.removeEventListener("click", convertToC);
-    //Wind Speed
-    //let speedElement = document.querySelector("#wind-speed");
-    //let speedUnit = document.querySelector("#speed-unit");
-    //let speedMPH = speedElement.innerHTML;
-    //let speedKMH = Math.round(speedMPH/1.609344);
-    //speedElement.innerHTML = speedKMH;
-    //speedUnit.innerHTML = "km/h";
 }
 
 let tempFLink = document.querySelector("#fahrenheit");
