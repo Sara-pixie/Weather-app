@@ -49,14 +49,18 @@ h3 {
 .city-weather .left {
   box-shadow: 1px 0 0 rgba(0, 0, 51, 0.25);
 }
+.city-weather .image {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
 .city-weather .temperature {
+  position: relative;
+  top: 20px;
   font-size: 40px;
   padding-top: 5px;
   margin-right: 5px;
 }
 .city-weather .unit {
-  position: relative;
-  top: -20px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 .selected {
