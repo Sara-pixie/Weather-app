@@ -9,11 +9,10 @@ function formatDate(date){
     }
     return `${day}, ${hour}:${min}`;
 }
-function displayDate(date){
-    let now = new Date(date);
-    let currentDate = document.querySelector("#current-date");
-    currentDate.innerHTML = formatDate(now);
-}
+
+let now = new Date();
+let currentDate = document.querySelector("#current-date");
+currentDate.innerHTML = formatDate(now);
 
 //Search Engine
 function displayCityName(city){
@@ -60,8 +59,6 @@ function showCityWeather(result){
     displayHumidity(humidity);
     let wind = result.data.wind.speed;
     displayWindSpeed(wind);
-    let date = (result.data.dt)*1000;
-    displayDate(date);
     //Icon
     //let icon = result.data.weather[0].icon;
     //displayIcon(icon);
