@@ -9,10 +9,12 @@ function formatDate(date){
     }
     return `${day}, ${hour}:${min}`;
 }
-
+function displayDate(date){
+    now = date;
+    let currentDate = document.querySelector("#current-date");
+    currentDate.innerHTML = formatDate(now);
+}
 let now = new Date();
-let currentDate = document.querySelector("#current-date");
-currentDate.innerHTML = formatDate(now);
 
 //Search Engine
 function displayCityName(city){
@@ -141,6 +143,8 @@ function showCityWeather(result){
     let sunRise = new Date((result.data.sys.sunrise)*1000);
     let sunSet = new Date((result.data.sys.sunset)*1000);
     changeBackground (sunRise, sunSet);
+    let date = new Date ((result.data.dt)*1000);
+    displayDate(date);
 }
 function search (city){
     let apiKey = "6193c366e72e624c45a1116d350e8278";
