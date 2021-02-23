@@ -82,10 +82,46 @@ function nightTheme(){
     day5.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
     day6.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
 }
+function dayTheme(){
+    let background = document.querySelector("#background");
+    background.setAttribute("style", "background-image:url(images/background-weather.jpg)");
+    let app = document.querySelector("#app");
+    app.setAttribute("style", "border:1px solid rgb(0, 0, 51)");
+    let city = document.querySelector("#current-city");
+    city.setAttribute("style", "color:rgb(102, 25, 175)");
+    let date = document.querySelector("#current-date");
+    date.setAttribute("style", "color: rgb(48, 48, 247);");
+    let hr = document.querySelector("#hr");
+    hr.setAttribute("style", "color:default");
+    let cityWeather = document.querySelector("#city-weather");
+    cityWeather.setAttribute("style", "color:black");
+    let forecast = document.querySelector("#forecast");
+    forecast.setAttribute("style", "color:black");
+    let footer = document.querySelector("#footer");
+    footer.setAttribute("style", "color:rgba(0, 0, 0, 0.75)");
+    let saraLink = document.querySelector("#sara-link");
+    saraLink.setAttribute("style", "color:rgba(0, 0, 0, 0.9)");
+    let weatherIcon = document.querySelector("#weather-icon");
+    weatherIcon.setAttribute("style", "background:rgba(255, 255, 255, 0.2)");
+    let leftCol = document.querySelector("#left-col");
+    leftCol.setAttribute("style", "box-shadow:1px 0 0 rgba(0, 0, 51, 0.25)");
+    let day1 = document.querySelector("#day-1");
+    let day2 = document.querySelector("#day-2");
+    let day3 = document.querySelector("#day-3");
+    let day4 = document.querySelector("#day-4");
+    let day5 = document.querySelector("#day-5");
+    let day6 = document.querySelector("#day-6");
+    day1.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
+    day2.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
+    day3.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
+    day4.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
+    day5.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
+    day6.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
+}
 function changeBackground(sunrise, sunset){
     if (now < sunrise || now > sunset){
         nightTheme();    
-    }  
+    }  else{dayTheme();}
 }
 function showCityWeather(result){
     let city = result.data.name;
@@ -186,4 +222,8 @@ function convertToC(event){
 
 let tempFLink = document.querySelector("#fahrenheit");
 tempFLink.addEventListener("click", convertToF);
+
+//Forecast
+
+
 
