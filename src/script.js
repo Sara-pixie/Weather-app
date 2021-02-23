@@ -143,7 +143,7 @@ function showCityWeather(result){
     let sunRise = new Date((result.data.sys.sunrise)*1000);
     let sunSet = new Date((result.data.sys.sunset)*1000);
     changeBackground (sunRise, sunSet);
-    let date = new Date ((result.data.dt)*1000);
+    let date = new Date ((result.data.dt+result.data.timezone)*1000);
     displayDate(date);
 }
 function search (city){
