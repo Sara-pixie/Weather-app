@@ -26,19 +26,19 @@ html {
   max-width: 700px;
 }
 .search {
-  margin: 0 auto;
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 #search-input {
   padding: 5px 20px;
   background: rgba(255, 255, 255, 0.445);
   border: 1px solid rgba(255, 255, 255, 0.603);
   border-radius: 4px;
+  margin-bottom: 5px;
 }
 button {
-  margin-left: 5px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
+  margin-bottom: 5px;
 }
 .current-city {
   margin: 5px auto;
@@ -58,8 +58,15 @@ h3 {
   text-transform: capitalize;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
+.city-weather {
+  text-align: center;
+}
 .city-weather .left {
-  box-shadow: 1px 0 0 rgba(0, 0, 51, 0.25);
+  min-width: fit-content;
+  margin-bottom: 5px;
+}
+.city-weather .temp-units {
+  min-width: fit-content;
 }
 .city-weather .image {
   background: rgba(255, 255, 255, 0.2);
@@ -85,7 +92,8 @@ h3 {
   text-decoration: underline;
 }
 .city-weather .right {
-  padding-left: 40px;
+  display: block;
+  margin: 10px auto;
 }
 .forecast {
   border: 1px solid rgba(5, 5, 65, 0.25);
@@ -100,7 +108,6 @@ h3 {
   border: 1px solid rgba(5, 5, 65, 0.25);
   border-radius: 4px;
   margin: 5px;
-  width: 90px;
   padding-top: 5px;
   box-shadow: 3px 3px 3px rgba(6, 6, 31, 0.25);
 }

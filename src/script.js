@@ -69,20 +69,16 @@ function nightTheme(){
     saraLink.setAttribute("style", "color:rgb(255, 241, 52)");
     let weatherIcon = document.querySelector("#weather-icon");
     weatherIcon.setAttribute("style", "background:rgba(0, 0, 0, 0.4)");
-    let leftCol = document.querySelector("#left-col");
-    leftCol.setAttribute("style", "box-shadow:1px 0 0 rgba(255, 255, 255, 0.4)");
     let day1 = document.querySelector("#day-1");
     let day2 = document.querySelector("#day-2");
     let day3 = document.querySelector("#day-3");
     let day4 = document.querySelector("#day-4");
     let day5 = document.querySelector("#day-5");
-    let day6 = document.querySelector("#day-6");
     day1.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
     day2.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
     day3.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
     day4.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
     day5.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
-    day6.setAttribute("style", "background:rgba(0, 0, 0, 0.5)");
 }
 function dayTheme(){
     let background = document.querySelector("#background");
@@ -105,20 +101,16 @@ function dayTheme(){
     saraLink.setAttribute("style", "color:rgba(0, 0, 0, 0.9)");
     let weatherIcon = document.querySelector("#weather-icon");
     weatherIcon.setAttribute("style", "background:rgba(255, 255, 255, 0.2)");
-    let leftCol = document.querySelector("#left-col");
-    leftCol.setAttribute("style", "box-shadow:1px 0 0 rgba(0, 0, 51, 0.25)");
     let day1 = document.querySelector("#day-1");
     let day2 = document.querySelector("#day-2");
     let day3 = document.querySelector("#day-3");
     let day4 = document.querySelector("#day-4");
     let day5 = document.querySelector("#day-5");
-    let day6 = document.querySelector("#day-6");
     day1.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
     day2.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
     day3.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
     day4.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
     day5.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
-    day6.setAttribute("style", "background:rgba(255, 255, 255, 0.3)");
 }
 function changeBackground(sunrise, sunset){
     if (now < sunrise || now > sunset){

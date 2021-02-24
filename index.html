@@ -20,9 +20,16 @@
         <div class="app" id="app">
             <div class="search">
                 <form id="search-form">
-                    <input type="search" placeholder="Enter city" autofocus autocomplete="off" id="search-input">
-                    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i> Search</button>
-                    <button class="btn btn-success" id="location-btn"><i class="fas fa-map-marker-alt"></i> My Location</button>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <input type="search" placeholder="Enter city" autofocus autocomplete="off" class="form-control" id="search-input">
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i> Search</button>
+                        
+                            <button class="btn btn-success" id="location-btn"><i class="fas fa-map-marker-alt"></i> My Location</button>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="current-city">
@@ -33,15 +40,13 @@
                 <div class="city-weather" id="city-weather">
                     <h3 id="temp-description"></h3>
                     <div class="row">
-                        <div class="left col-6" id="left-col">
-                            <div class="row">
-                                <div class="image col-6" id="weather-icon"></div>
-                                <div class="col-6">
-                                    <p> <string class="temperature" id="now-temp"></string><string class="unit"><string class ="selected" id="celsius">°C</string> | <string id="fahrenheit">°F</string></string></p>
-                                </div>
-                            </div>
+                        <div class="left col-sm-4" id="left-col">
+                            <p class="image" id="weather-icon"></p>
                         </div>
-                        <div class="right col-6">
+                        <div class="col-sm-4 temp-units">
+                            <p><string class="temperature" id="now-temp"></string><string class="unit"><string class ="selected" id="celsius">°C</string> | <string id="fahrenheit">°F</string></string></p>
+                        </div>
+                        <div class="right col-sm-4">
                             <p>
                               Feels like: <string id="feels-like"></string>°C <br />
                               Humidity: <string id="humidity"></string>% <br />
@@ -82,13 +87,6 @@
                         </div>
                         <div class="day col-sm-2" id="day-5">
                             <h4>Sat</h4>
-                            <div class="image">
-                                <i class="fas fa-cloud-sun-rain"></i>
-                            </div>
-                            <p>6°C</p>
-                        </div>
-                        <div class="day col-sm-2" id="day-6">
-                            <h4>Sun</h4>
                             <div class="image">
                                 <i class="fas fa-cloud-sun-rain"></i>
                             </div>
