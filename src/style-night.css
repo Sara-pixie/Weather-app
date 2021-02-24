@@ -4,7 +4,7 @@ html {
   padding: 0;
 }
 .background {
-  background-image: url("../images/background-weather.jpg");
+  background-image: url(../images/background-nightsky.jpg);
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@ html {
   padding-bottom: 50px;
 }
 .app {
-  border: 1px solid rgb(0, 0, 51);
+  border: 1px solid rgb(247, 202, 1);
   border-radius: 4px;
   background: transparent;
   margin: 0 auto;
@@ -45,13 +45,16 @@ button {
   font-family: "Courgette", cursive;
 }
 .city {
-  color: rgb(102, 25, 175);
+  color: rgb(247, 161, 1);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
 }
 .date {
   font-size: 20px;
-  color: rgb(48, 48, 247);
+  color: rgb(35, 235, 235);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+hr {
+  color: white;
 }
 h3 {
   font-size: 25px;
@@ -60,6 +63,7 @@ h3 {
 }
 .city-weather {
   text-align: center;
+  color: rgb(255, 248, 149);
 }
 .city-weather .left {
   min-width: fit-content;
@@ -69,7 +73,7 @@ h3 {
   min-width: fit-content;
 }
 .city-weather .image {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
 }
 .city-weather .temperature {
@@ -102,6 +106,7 @@ h3 {
   margin-bottom: 5px;
   padding: 5px 20px;
   background: rgba(255, 255, 255, 0.3);
+  color: rgb(255, 244, 96);
 }
 .day {
   text-align: center;
@@ -110,6 +115,7 @@ h3 {
   margin: 5px;
   padding-top: 5px;
   box-shadow: 3px 3px 3px rgba(6, 6, 31, 0.25);
+  background: rgba(0, 0, 0, 0.5);
 }
 .image {
   text-align: center;
@@ -124,13 +130,13 @@ h3 {
   font-size: 50px;
 }
 .footer {
-  color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 248, 149);
   display: block;
   text-align: center;
   margin: 0 auto;
 }
 .sara-git-link {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgb(255, 241, 52);
   text-decoration: none;
 }
 .sara-git-link:hover {
