@@ -108,7 +108,7 @@ h3 {
   background: rgba(255, 255, 255, 0.3);
   color: rgb(255, 244, 96);
 }
-.day {
+.hour {
   text-align: center;
   border: 1px solid rgba(5, 5, 65, 0.25);
   border-radius: 4px;
@@ -116,15 +116,20 @@ h3 {
   padding-top: 5px;
   box-shadow: 3px 3px 3px rgba(6, 6, 31, 0.25);
   background: rgba(0, 0, 0, 0.5);
+  min-width: fit-content;
 }
-.image {
-  text-align: center;
-}
-.day p {
-  text-align: center;
-}
-.day .image {
+.hour h4 {
   font-size: 20px;
+}
+.hour p {
+  text-align: center;
+}
+.hour .image {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+.hour .image img {
+  height: 50px;
 }
 .city-weather .image {
   font-size: 50px;

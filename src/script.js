@@ -1,13 +1,17 @@
 //Current Date
-function formatDate(date){
-    let days =["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let day = days[date.getDay()];
+function formatHours(timestamp){
+    let date = new Date(timestamp);
     let hour = date.getHours();
     let min = date.getMinutes();
     if (min < 10){
         min = `0${min}`;
     }
-    return `${day}, ${hour}:${min}`;
+    return `${hour}:${min}`;
+}
+function formatDate(date){
+    let days =["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
+    return `${day}, ${formatHours(date)}`;
 }
 function displayDate(date){
     now = date;
@@ -82,12 +86,33 @@ function showCityWeather(result){
     changeBackground (sunRise, sunSet, date);
     displayDate(date);
 }
+function showForecast(result){
+    console.log(result.data);
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = null;
+    let forecast = null;
+    for (let index = 0; index < 6; index++) {
+        forecast = result.data.list[index];
+        forecastElement.innerHTML +=
+        `<div class="hour col-sm-2" id="hour-${index++}">
+            <h4>${formatHours(forecast.dt*1000)}</h4>
+            <div class="image">
+                <img src=http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png />
+            </div>
+            <p><strong>${Math.round(forecast.main.temp_max)}°</strong> - ${Math.round(forecast.main.temp_min)}°C</p>
+        </div>`;
+    }
+}
 function search (city){
     let apiKey = "6193c366e72e624c45a1116d350e8278";
     let unit = "metric";
     let urlEndpoint = "https://api.openweathermap.org/data/2.5/weather?"
     let apiUrl = `${urlEndpoint}q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(apiUrl).then(showCityWeather);
+    //forecast
+    let forecastUrlEndpoint = "https://api.openweathermap.org/data/2.5/forecast?";
+    let forecastUrl =`${forecastUrlEndpoint}q=${city}&units=${unit}&appid=${apiKey}`;
+    axios.get(forecastUrl).then(showForecast);
 }
 function searchEngine(event){
     event.preventDefault();
@@ -162,8 +187,4 @@ function convertToC(event){
 
 let tempFLink = document.querySelector("#fahrenheit");
 tempFLink.addEventListener("click", convertToF);
-
-//Forecast
-
-
 
