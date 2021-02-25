@@ -87,14 +87,13 @@ function showCityWeather(result){
     displayDate(date);
 }
 function showForecast(result){
-    console.log(result.data);
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = null;
     let forecast = null;
     for (let index = 0; index < 6; index++) {
         forecast = result.data.list[index];
         forecastElement.innerHTML +=
-        `<div class="hour col-sm-2" id="hour-${index++}">
+        `<div class="hour col-sm" id="hour-${index+1}">
             <h4>${formatHours(forecast.dt*1000)}</h4>
             <div class="image">
                 <img src=http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png />
