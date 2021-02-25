@@ -119,6 +119,7 @@ function searchEngine(event){
     let searchInput = document.querySelector("#search-input");
     let city = searchInput.value.trim();
     search(city);
+    searchInput.value = null;
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchEngine);
