@@ -132,6 +132,10 @@ function handlePosition(position){
     let urlEndpoint = "https://api.openweathermap.org/data/2.5/weather?"
     let apiUrl = `${urlEndpoint}lat=${lat}&lon=${lon}&units=${unit}&appid=${apiKey}`;
     axios.get(apiUrl).then(showCityWeather);
+    //forecast
+    let forecastUrlEndpoint = "https://api.openweathermap.org/data/2.5/forecast?";
+    let forecastUrl =`${forecastUrlEndpoint}lat=${lat}&lon=${lon}&units=${unit}&appid=${apiKey}`;
+    axios.get(forecastUrl).then(showForecast);
 }
 function searchMyLocation(event){
     navigator.geolocation.getCurrentPosition(handlePosition);
