@@ -1,4 +1,6 @@
 # Weather app
+![alt text](https://github.com/Sara-pixie/Weather-app/blob/main/weather_app_thumbnail.png?raw=true)
+
 Project for SheCodesPlus
 # Description
 It allows users to search for a city by name or your current location 
